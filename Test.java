@@ -7,7 +7,9 @@ import hw4.GUICF;
 
 public class Test {
     public static void main(String[] args) {
-        CFPlayer ai1 = new JohnAI (); CFPlayer ai2 = new RandomAI (); int n = 10000;
+        CFPlayer ai1 = new TiffanyAI (); 
+        CFPlayer ai2 = new RandomAI (); 
+        int n = 10000;
         int winCount = 0;
         for (int i=0; i<n; i++) {
             ConsoleCF game = new ConsoleCF(ai1, ai2); 
