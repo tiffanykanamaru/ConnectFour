@@ -2,9 +2,9 @@ package hw4;
 
 public class CFGame {
 
+    // Declare variables
     private final int[][] state;
     private boolean isRedTurn;
- 
     private int redWin;
     private int blackWin;
 
@@ -121,7 +121,7 @@ public class CFGame {
     public int winner(){
         if (redWin > blackWin){
             return 1;
-        }
+        } 
         else if (blackWin > redWin){
             return -1;
         } else {
