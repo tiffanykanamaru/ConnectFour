@@ -4,8 +4,9 @@ public class CFGame {
 
     private final int[][] state;
     private boolean isRedTurn;
-    private boolean isDraw;
-
+ 
+    private int redWin;
+    private int blackWin;
 
     // Array initializer
     {
@@ -14,7 +15,6 @@ public class CFGame {
             for (int j=0; j<6; j++)
                 state[i][j] = 0;
         isRedTurn = true; 
-        isDraw = false;
     }
     
     // Gets current state of the game
@@ -57,11 +57,15 @@ public class CFGame {
 
     // Sees if game is over or not
     public boolean isGameOver(){
-
         // Checks horizontal case
         for (int i=0; i<6; i++){
             for (int j=0; j<4; j++){
                 if (state[i][j] == state[i][j+1] == state[i][j+2] == state[i][j+3]){
+                    if (state[i][j] == 1){
+                        redWin++;
+                    } else {
+                        blackWin++;
+                    }
                     return true;
                 }
             }
@@ -70,8 +74,13 @@ public class CFGame {
         // Checks vertical case
         for (int j=0; j<6; j++){
             for (int i=0; i<3; i++){
-               if (state[i][j] == state[i+1][j] == state[i+2][j] == state[i+3][j]){
-                return true;`
+                if (state[i][j] == state[i+1][j] == state[i+2][j] == state[i+3][j]){
+                    if (state[i][j] == 1){
+                        redWin++;
+                    } else {
+                        blackWin++;
+                    }
+                    return true;
                } 
             }
         }
@@ -80,6 +89,11 @@ public class CFGame {
         for (int i=3; i<6; i++){
             for (int j=3; j<5; j++){
                 if (state[i][j] == state[i-1][j-1] == state[i-2][j-2] == state[i-3][j-3]){
+                    if (state[i][j] == 1){
+                        redWin++;
+                    } else {
+                        blackWin++;
+                    }
                     return true;
                 }
             }
@@ -89,6 +103,11 @@ public class CFGame {
         for (int i=3; i<6; i++){
             for (int j=0; j<4; j++){
                 if (state[i][j] == state[i-1][j+1] == state[i-2][j+2] == state[i-3][j+3]){
+                    if (state[i][j] == 1){
+                        redWin++;
+                    } else {
+                        blackWin++;
+                    }
                     return true;
                 }
             }
@@ -96,6 +115,18 @@ public class CFGame {
 
         // Otherwise return false
         return false;
+    }
+
+    // Return if red wins, black wins, or if there is a draw
+    public int winner(){
+        if (redWin > blackWin){
+            return 1;
+        }
+        else if (blackWin > redWin){
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
 
