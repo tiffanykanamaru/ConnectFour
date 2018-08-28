@@ -76,10 +76,26 @@ public class CFGame {
             }
         }
 
-        // Check upward diagnoal
-
         // Check downward diagonal
+        for (int i=3; i<6; i++){
+            for (int j=3; j<5; j++){
+                if (state[i][j] == state[i-1][j-1] == state[i-2][j-2] == state[i-3][j-3]){
+                    return true;
+                }
+            }
+        }
 
+        // Check upward diagonal
+        for (int i=3; i<6; i++){
+            for (int j=0; j<4; j++){
+                if (state[i][j] == state[i-1][j+1] == state[i-2][j+2] == state[i-3][j+3]){
+                    return true;
+                }
+            }
+        }
+
+        // Otherwise return false
+        return false;
     }
 
 
