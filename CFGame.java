@@ -1,7 +1,6 @@
 package hw4;
 
 public class CFGame {
-
     // Declare variables
     private final int[][] state;
     private boolean isRedTurn;
@@ -32,7 +31,7 @@ public class CFGame {
     }
 
     // Plays column c
-    public boolean play (int c){
+    public boolean play(int c){
         // Check if columns are within bounds
         if (c > 7 || c < 1){
             return false;
@@ -128,6 +127,4 @@ public class CFGame {
             return 0;
         }
     }
-
-
 }

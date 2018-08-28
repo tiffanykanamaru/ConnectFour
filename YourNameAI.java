@@ -1,7 +1,7 @@
 import java.util.Random;
 
-public class RandomAI implements CFPlayer {
-	// Return a random legal column
+public class YourNameAI implements CFPlayer {
+	// TEMPORARY CHANGE LATER
 	int nextMove(CFGame g){
 		Random num = new Random();
 		int column;
@@ -12,6 +12,5 @@ public class RandomAI implements CFPlayer {
 	}
 
 	String getName(){
-		return "Random Player";
+		return "Tiffany's AI";
 	}
-}
