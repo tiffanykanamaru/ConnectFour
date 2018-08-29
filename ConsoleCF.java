@@ -5,14 +5,17 @@ public class ConsoleCF extends CFGame{
 	CFPlayer playerOne;
 	CFPlayer playerTwo;
 
+	// Get random number (0 or 1)
+	Random num = new Random();
+	int first;
+
 	// Sets up human vs AI game
 	public ConsoleCF(CFPlayer ai){
 		// Create human player object
 		HumanPlayer hPlayer = new HumanPlayer();
 
-		// Get random number (0 or 1)
-		Random num = new Random();
-		int first = num.nextInt(2);
+		// Get random number
+		first = num.nextInt(2);
 
 		// Determine which players goes first
 		if (first == 0){
@@ -26,9 +29,8 @@ public class ConsoleCF extends CFGame{
 
 	// Sets up AI vs AI game
 	public ConsoleCF(CFPlayer ai1, CFPlayer ai2){
-		// Get random number (0 or 1)
-		Random num = new Random();
-		int first = num.nextInt(2);
+		// Get random number
+		first = num.nextInt(2);
 
 		// Determine which player goes first 
 		if (first == 0){
@@ -38,6 +40,30 @@ public class ConsoleCF extends CFGame{
 		else {
 			playerOne = ai2;
 			playerTwo = ai1;
+		}
+	}
+
+	// Plays game until the game is over
+	public void playOut(){
+		while (!gameOver()){
+			play(playerOne.nextMove(this));
+
+			if (!gameOver()){
+				play(playerTwo.nextMove(this));
+			} else {
+				break;
+			}
+		}
+	}
+
+	// Returns name
+	public String getWinner(){
+		if (winner()==0){
+			return "draw";
+		} else if (winner()==1) {
+			return playerOne.getName();
+		} else {
+			return playerTwo.getName();
 		}
 	}
 
