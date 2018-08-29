@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class Tiffany implements CFPlayer {
+public class TiffanyAI implements CFPlayer {
 	// TEMPORARY CHANGE LATER
-	int nextMove(CFGame g){
+	public int nextMove(CFGame g){
 		Random num = new Random();
 		int column;
 		// Get a random number from 1 to 7
@@ -11,7 +11,7 @@ public class Tiffany implements CFPlayer {
 		return column;
 	}
 
-	String getName(){
+	public String getName(){
 		return "Tiffany's AI";
 	}
 }

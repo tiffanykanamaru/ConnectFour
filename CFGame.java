@@ -1,5 +1,3 @@
-package hw4;
-
 public class CFGame {
     // Declare variables
     private final int[][] state;
@@ -47,7 +45,6 @@ public class CFGame {
                 else {
                     state[c-1][j] = -1;
                     return true;
-                    break;
                 }
             }
         }
@@ -59,7 +56,7 @@ public class CFGame {
         // Checks horizontal case
         for (int i=0; i<6; i++){
             for (int j=0; j<4; j++){
-                if (state[i][j] == state[i][j+1] == state[i][j+2] == state[i][j+3]){
+                if (state[i][j]==state[i][j+1] && state[i][j]==state[i][j+2] && state[i][j]==state[i][j+3]){
                     if (state[i][j] == 1){
                         redWin++;
                     } else {
@@ -73,7 +70,7 @@ public class CFGame {
         // Checks vertical case
         for (int j=0; j<6; j++){
             for (int i=0; i<3; i++){
-                if (state[i][j] == state[i+1][j] == state[i+2][j] == state[i+3][j]){
+                if (state[i][j]==state[i+1][j] && state[i][j]==state[i+2][j] && state[i][j]==state[i+3][j]){
                     if (state[i][j] == 1){
                         redWin++;
                     } else {
@@ -87,7 +84,7 @@ public class CFGame {
         // Check downward diagonal
         for (int i=3; i<6; i++){
             for (int j=3; j<5; j++){
-                if (state[i][j] == state[i-1][j-1] == state[i-2][j-2] == state[i-3][j-3]){
+                if (state[i][j]==state[i-1][j-1] && state[i][j]==state[i-2][j-2] && state[i][j]==state[i-3][j-3]){
                     if (state[i][j] == 1){
                         redWin++;
                     } else {
@@ -101,7 +98,7 @@ public class CFGame {
         // Check upward diagonal
         for (int i=3; i<6; i++){
             for (int j=0; j<4; j++){
-                if (state[i][j] == state[i-1][j+1] == state[i-2][j+2] == state[i-3][j+3]){
+                if (state[i][j]==state[i-1][j+1] && state[i][j]== state[i-2][j+2] && state[i][j]==state[i-3][j+3]){
                     if (state[i][j] == 1){
                         redWin++;
                     } else {

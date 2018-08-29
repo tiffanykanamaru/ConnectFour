@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class RandomAI implements CFPlayer {
 	// Return a random legal column
-	int nextMove(CFGame g){
+	public int nextMove(CFGame g){
 		Random num = new Random();
 		int column;
 		// Get a random number from 1 to 7
@@ -11,7 +11,7 @@ public class RandomAI implements CFPlayer {
 		return column;
 	}
 
-	String getName(){
+	public String getName(){
 		return "Random Player";
 	}
 }

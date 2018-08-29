@@ -1,9 +1,4 @@
 import java.util.Scanner;
-import hw4.CFPlayer;
-import hw4.RandomAI;
-import hw4.YourNameAI;
-import hw4.ConsoleCF;
-import hw4.GUICF;
 
 public class Test {
     public static void main(String[] args) {

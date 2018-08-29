@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ConsoleCF extends CFGame{
 	CFPlayer playerOne;
 	CFPlayer playerTwo;
+	public int column;
 
 	// Get random number (0 or 1)
 	Random num = new Random();
@@ -45,10 +46,10 @@ public class ConsoleCF extends CFGame{
 
 	// Plays game until the game is over
 	public void playOut(){
-		while (!gameOver()){
+		while (!isGameOver()){
 			play(playerOne.nextMove(this));
 
-			if (!gameOver()){
+			if (!isGameOver()){
 				play(playerTwo.nextMove(this));
 			} else {
 				break;
@@ -69,7 +70,7 @@ public class ConsoleCF extends CFGame{
 
 	// Human player implementation
 	private class HumanPlayer implements CFPlayer {
-		int nextMove(CFGame g){
+		public int nextMove(CFGame g){
 			// Print out current board
 			int[][] currentBoard = g.getState();
 			for (int i=0; i<7; i++){
@@ -83,11 +84,12 @@ public class ConsoleCF extends CFGame{
 			do {
 				Scanner userColumn = new Scanner(System.in);
 				System.out.println("What is the next move?: ");
-				int column = userColumn.nextInt();
+				column = userColumn.nextInt();
 			} while (column>=8 && column<=0);
+			return column;
 		}
 
-		String getName(){
+		public String getName(){
 			return "Human Player";
 		}
 	}
