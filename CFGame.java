@@ -53,7 +53,7 @@ public class CFGame {
 
     // Sees if game is over or not
     public boolean isGameOver(){
-        // Checks horizontal case
+        // Checks vertical case
         for (int i=0; i<6; i++){
             for (int j=0; j<4; j++){
                 if (state[i][j]==state[i][j+1] && state[i][j]==state[i][j+2] && state[i][j]==state[i][j+3]){
@@ -67,7 +67,7 @@ public class CFGame {
             }
         }
 
-        // Checks vertical case
+        // Checks horizontal case
         for (int j=0; j<6; j++){
             for (int i=0; i<3; i++){
                 if (state[i][j]==state[i+1][j] && state[i][j]==state[i+2][j] && state[i][j]==state[i+3][j]){

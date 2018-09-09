@@ -10,7 +10,7 @@ public class Test {
             ConsoleCF game = new ConsoleCF(ai1, ai2); 
             game.playOut();
             if (game.getWinner()==ai1.getName())
-                winCount ++; 
+            winCount ++; 
         }
         System.out.print(ai1.getName() + " wins "); 
         System.out.print(((double) winCount)/((double) n)*100 + "%"); 
